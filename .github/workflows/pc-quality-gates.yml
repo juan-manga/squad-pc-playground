@@ -21,7 +21,7 @@ jobs:
     name: Secrets (TruffleHog)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: TruffleHog (verified secrets fail the build)
@@ -31,7 +31,7 @@ jobs:
     name: Vulnerabilities (Trivy)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Trivy filesystem scan (CRITICAL/HIGH)
         run: docker run --rm -v "$PWD:/repo" aquasec/trivy:latest fs --scanners vuln --severity CRITICAL,HIGH --ignore-unfixed --exit-code 1 /repo
 
@@ -39,18 +39,18 @@ jobs:
     name: SAST (Semgrep)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Semgrep
-        run: docker run --rm -v "$PWD:/src" semgrep/semgrep:latest semgrep scan --config auto --error --metrics off /src
+        run: docker run --rm -v "$PWD:/src" semgrep/semgrep:latest semgrep scan --config p/default --error --metrics off /src
 
   sbom:
     name: SBOM (Syft CycloneDX)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Generate CycloneDX SBOM
         run: docker run --rm -v "$PWD:/repo" anchore/syft:latest dir:/repo -o cyclonedx-json > sbom.cdx.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: engineering-excellence-sbom
           path: sbom.cdx.json
@@ -59,8 +59,8 @@ jobs:
     name: Tests & coverage floor
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -70,7 +70,7 @@ jobs:
         run: npx vitest run --coverage --coverage.reporter=lcov --coverage.reporter=text-summary
       - name: Enforce coverage floor (quality.config.json)
         run: node .github/scripts/pc-coverage-floor.mjs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: always()
         with:
           name: engineering-excellence-coverage

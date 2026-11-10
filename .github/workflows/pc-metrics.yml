@@ -21,8 +21,8 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Compute metrics
@@ -30,7 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           SINCE: ${{ inputs.since || '30d' }}
         run: node .github/scripts/pc-metrics.mjs --since "$SINCE" --out squad-metrics >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: squad-metrics
           path: squad-metrics/
