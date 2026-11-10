@@ -1,0 +1,17 @@
+{
+  "name": "squad-pc-playground",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Playground to exercise Squad Optimized — Plain Concepts (gates, labels, metrics)",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "lint": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^5.0.3",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}
