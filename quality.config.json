@@ -1,0 +1,38 @@
+{
+  "$comment": "Squad Optimized — Plain Concepts. Floors only ratchet up: never lower a floor to go green.",
+  "appPaths": [
+    "src/"
+  ],
+  "specPaths": [
+    "openspec/",
+    "docs/decisions/",
+    "docs/adr/",
+    ".squad/decisions",
+    "features/"
+  ],
+  "docsPaths": [
+    "docs/",
+    "README.md",
+    "ARCHITECTURE.md",
+    "AGENTS.md"
+  ],
+  "coverage": {
+    "lines": 0
+  },
+  "mutation": {
+    "break": 0
+  },
+  "diff": {
+    "maxCommentRatio": 0.1,
+    "maxTestToCodeRatio": 1,
+    "maxTestsPerKloc": 40
+  },
+  "mergeGate": {
+    "maxChangedLines": 10000,
+    "botAuthors": [
+      "[bot]",
+      "copilot",
+      "squad"
+    ]
+  }
+}

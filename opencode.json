@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "squad_state": {
+      "enabled": true,
+      "type": "local",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\juan.manga\\AppData\\Roaming\\Claude\\scratch-workspaces\\f0ab8f51-cd11-4805-b21e-03097b3bd08d\\33a1c2e6-ade8-4bc7-930d-48463d80dc85\\scratch-2026-11-10-7ef7c6\\sq\\packages\\squad-cli\\dist\\cli-entry.js",
+        "state-mcp"
+      ]
+    }
+  }
+}

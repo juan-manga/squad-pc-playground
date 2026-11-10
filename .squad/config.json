@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "clients": [
+    "copilot",
+    "claude",
+    "opencode"
+  ],
+  "roleModelOverrides": {
+    "lead": "claude-opus-5.5",
+    "security": "claude-opus-5.5",
+    "ai": "claude-opus-5.5",
+    "frontend": "claude-sonnet-5.5",
+    "backend": "claude-sonnet-5.5",
+    "data": "claude-sonnet-5.5",
+    "devops": "claude-sonnet-5.5",
+    "tester": "claude-sonnet-5.5",
+    "docs": "claude-haiku-5.5",
+    "scribe": "claude-haiku-5.5",
+    "monitor": "claude-haiku-5.5",
+    "reviewer": "claude-opus-5.5",
+    "default": "claude-sonnet-5.5"
+  },
+  "roleModelOverridesOpencode": {
+    "lead": "github-copilot/claude-opus-5.5",
+    "security": "github-copilot/claude-opus-5.5",
+    "ai": "github-copilot/claude-opus-5.5",
+    "frontend": "github-copilot/claude-sonnet-5.5",
+    "backend": "github-copilot/claude-sonnet-5.5",
+    "data": "github-copilot/claude-sonnet-5.5",
+    "devops": "github-copilot/claude-sonnet-5.5",
+    "tester": "github-copilot/claude-sonnet-5.5",
+    "docs": "github-copilot/claude-haiku-5.5",
+    "scribe": "github-copilot/claude-haiku-5.5",
+    "monitor": "github-copilot/claude-haiku-5.5",
+    "reviewer": "github-copilot/claude-opus-5.5",
+    "default": "github-copilot/claude-sonnet-5.5"
+  },
+  "plainConcepts": {
+    "hosts": [
+      "copilot",
+      "claude",
+      "opencode"
+    ],
+    "openspec": true,
+    "rtk": false,
+    "graphify": false,
+    "repomap": true,
+    "gates": true,
+    "platform": true,
+    "mcp": true,
+    "provider": "github-copilot",
+    "skills": [
+      "pc-onboard",
+      "find-skills",
+      "tdd"
+    ],
+    "optimizedAt": "2026-11-10T13:27:29.110Z"
+  }
+}

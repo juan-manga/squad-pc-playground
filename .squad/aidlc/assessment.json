@@ -1,0 +1,161 @@
+{
+  "level": 1,
+  "checks": [
+    {
+      "id": "agents-md",
+      "level": 1,
+      "label": "AGENTS.md hub for all AI hosts",
+      "pass": true
+    },
+    {
+      "id": "host-instructions",
+      "level": 1,
+      "label": "Host instructions (copilot-instructions.md / CLAUDE.md)",
+      "pass": true
+    },
+    {
+      "id": "build-test-cmds",
+      "level": 1,
+      "label": "Build/test commands discoverable",
+      "pass": true
+    },
+    {
+      "id": "squad-team",
+      "level": 2,
+      "label": "Agent team cast (Squad)",
+      "pass": false
+    },
+    {
+      "id": "skills",
+      "level": 2,
+      "label": "Skills installed",
+      "pass": true
+    },
+    {
+      "id": "openspec",
+      "level": 2,
+      "label": "Spec-driven workflow (OpenSpec)",
+      "pass": true
+    },
+    {
+      "id": "tests",
+      "level": 2,
+      "label": "Automated tests present",
+      "pass": true
+    },
+    {
+      "id": "ci",
+      "level": 2,
+      "label": "CI pipeline",
+      "pass": true
+    },
+    {
+      "id": "repomap",
+      "level": 2,
+      "label": "Context map for agents (repomap/graphify)",
+      "pass": true
+    },
+    {
+      "id": "secrets",
+      "level": 3,
+      "label": "Secret scanning in CI (TruffleHog/Gitleaks)",
+      "pass": true
+    },
+    {
+      "id": "vulns",
+      "level": 3,
+      "label": "Vulnerability scanning (Trivy/Dependabot)",
+      "pass": true
+    },
+    {
+      "id": "sast",
+      "level": 3,
+      "label": "SAST (Semgrep/CodeQL)",
+      "pass": true
+    },
+    {
+      "id": "spec-gate",
+      "level": 3,
+      "label": "Spec-in-PR gate (app changes touch spec/change/ADR)",
+      "pass": true
+    },
+    {
+      "id": "docs",
+      "level": 3,
+      "label": "Architecture + decision records",
+      "pass": false
+    },
+    {
+      "id": "coverage",
+      "level": 4,
+      "label": "Coverage floor enforced in CI",
+      "pass": true
+    },
+    {
+      "id": "gherkin",
+      "level": 4,
+      "label": "Executable specs (Gherkin bound to OpenSpec)",
+      "pass": false
+    },
+    {
+      "id": "sbom",
+      "level": 4,
+      "label": "SBOM generated (Syft CycloneDX)",
+      "pass": true
+    },
+    {
+      "id": "agentic-workflows",
+      "level": 4,
+      "label": "Agentic workflows (triage/implement routes)",
+      "pass": true
+    },
+    {
+      "id": "metrics",
+      "level": 4,
+      "label": "Delivery metrics (Squad PRs labelled, weekly metrics)",
+      "pass": true
+    },
+    {
+      "id": "token-tooling",
+      "level": 4,
+      "label": "Token optimisation (RTK / economy / context tier)",
+      "pass": false
+    },
+    {
+      "id": "mutation",
+      "level": 5,
+      "label": "Mutation testing (Stryker)",
+      "pass": true
+    },
+    {
+      "id": "dast",
+      "level": 5,
+      "label": "DAST (OWASP ZAP baseline)",
+      "pass": true
+    },
+    {
+      "id": "complexity",
+      "level": 5,
+      "label": "Complexity gate (CC ≤ 15, CRAP ≤ 30)",
+      "pass": true
+    },
+    {
+      "id": "merge-gate",
+      "level": 5,
+      "label": "Merge gate for bot PRs (auto-merge with guardrails)",
+      "pass": true
+    },
+    {
+      "id": "intake",
+      "level": 5,
+      "label": "Maintenance-mode intake (PRODUCT_SCOPE + business request form)",
+      "pass": true
+    },
+    {
+      "id": "contract",
+      "level": 5,
+      "label": "Platform contract & health registration",
+      "pass": true
+    }
+  ]
+}
