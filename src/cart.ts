@@ -4,9 +4,13 @@ export interface CartItem {
   quantity: number;
 }
 
+export const BULK_THRESHOLD = 10;
+export const BULK_DISCOUNT_PERCENT = 10;
+
 export function lineTotal(item: CartItem): number {
   if (item.quantity < 0 || item.unitPrice < 0) throw new RangeError('Price and quantity must be non-negative');
-  return round2(item.unitPrice * item.quantity);
+  const gross = round2(item.unitPrice * item.quantity);
+  return item.quantity >= BULK_THRESHOLD ? applyDiscount(gross, BULK_DISCOUNT_PERCENT) : gross;
 }
 
 export function cartTotal(items: CartItem[]): number {
