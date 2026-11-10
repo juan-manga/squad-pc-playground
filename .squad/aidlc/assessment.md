@@ -39,7 +39,7 @@
 ### Level 4 — Autonomous delivery
 
 - ✅ Coverage floor enforced in CI
-- ❌ Executable specs (Gherkin bound to OpenSpec) — _squad optimize specs (OpenSpec → features/*.feature), bind with Reqnroll / playwright-bdd / pytest-bdd_
+- ✅ Executable specs (Gherkin bound to OpenSpec)
 - ✅ SBOM generated (Syft CycloneDX)
 - ✅ Agentic workflows (triage/implement routes)
 - ✅ Delivery metrics (Squad PRs labelled, weekly metrics)
@@ -65,19 +65,19 @@ _The Lead owns this roadmap. Turn each step into an issue labelled `squad` so th
 
 | Role | Model | Relative cost | $/Mtok in·out (models.dev) |
 |---|---|---|---|
-| 🏗️ Lead / Architect | `claude-opus-5.5` | 10× | 4.399 · 21.998 |
-| 🔒 Security | `claude-opus-5.5` | 10× | 4.399 · 21.998 |
-| 🧠 AI / ML | `claude-opus-5.5` | 10× | 4.399 · 21.998 |
-| ⚛️ Frontend / UI | `claude-sonnet-5.5` | 3× | 2.25 · 11.249 |
-| 🔧 Backend / API | `claude-sonnet-5.5` | 3× | 2.25 · 11.249 |
-| 📊 Data | `claude-sonnet-5.5` | 3× | 2.25 · 11.249 |
-| ⚙️ DevOps / Platform | `claude-sonnet-5.5` | 3× | 2.25 · 11.249 |
-| 🧪 Tester / QA | `claude-sonnet-5.5` | 3× | 2.25 · 11.249 |
-| 📝 Docs / DevRel | `claude-haiku-5.5` | 1× | 0.113 · 0.563 |
-| 📋 Scribe | `claude-haiku-5.5` | 1× | 0.113 · 0.563 |
-| 🔄 Work Monitor (Ralph) | `claude-haiku-5.5` | 1× | 0.113 · 0.563 |
-| 🔍 Reviewer / Fact Checker | `claude-opus-5.5` | 10× | 4.399 · 21.998 |
-| 👤 Everyone else | `claude-sonnet-5.5` | 3× | 2.25 · 11.249 |
+| 🏗️ Lead / Architect | `claude-opus-5.5` | 10× | — |
+| 🔒 Security | `claude-opus-5.5` | 10× | — |
+| 🧠 AI / ML | `claude-opus-5.5` | 10× | — |
+| ⚛️ Frontend / UI | `claude-sonnet-5.5` | 3× | — |
+| 🔧 Backend / API | `claude-sonnet-5.5` | 3× | — |
+| 📊 Data | `claude-sonnet-5.5` | 3× | — |
+| ⚙️ DevOps / Platform | `claude-sonnet-5.5` | 3× | — |
+| 🧪 Tester / QA | `claude-sonnet-5.5` | 3× | — |
+| 📝 Docs / DevRel | `claude-haiku-5.5` | 1× | — |
+| 📋 Scribe | `claude-haiku-5.5` | 1× | — |
+| 🔄 Work Monitor (Ralph) | `claude-haiku-5.5` | 1× | — |
+| 🔍 Reviewer / Fact Checker | `claude-opus-5.5` | 10× | — |
+| 👤 Everyone else | `claude-sonnet-5.5` | 3× | — |
 
 - Repo map: ~112 tokens (read once instead of exploring the tree).
 - RTK: not installed — `squad optimize tools --rtk`.
