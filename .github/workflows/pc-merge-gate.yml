@@ -59,6 +59,8 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           BASE_REF: ${{ github.event.pull_request.base.ref }}
         run: |
+          # Comment once per PR, not on every push/label event.
+          gh pr view "$PR_NUMBER" --json comments --jq '.comments[].body' | grep -q '^Merge gate: this PR qualifies' && exit 0
           gh pr comment "$PR_NUMBER" --body "Merge gate: this PR qualifies for auto-merge, but \`$BASE_REF\` has no ruleset with required status checks, so merging now could skip running gates. Add the \`pc-quality-gates\` and \`pc-pr-guardrails\` jobs as required checks (Settings → Rules → Rulesets) and re-run this workflow."
       - name: Request human review
         if: steps.risk.outputs.disposition == 'human-review'
@@ -67,5 +69,7 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           REASON: ${{ steps.risk.outputs.reason }}
         run: |
-          gh pr edit "$PR_NUMBER" --add-label human-review || true
+          gh label create human-review --color d93f0b --description "Merge gate: human checkpoint hit" 2>/dev/null || true
+          gh pr edit "$PR_NUMBER" --add-label human-review
+          gh pr view "$PR_NUMBER" --json comments --jq '.comments[].body' | grep -qF "Merge gate: human review required — $REASON" && exit 0
           gh pr comment "$PR_NUMBER" --body "Merge gate: human review required — $REASON"
