@@ -11,6 +11,11 @@ describe('cart', () => {
     expect(() => applyDiscount(80, 120)).toThrow(RangeError);
   });
 
+  it('gives 10% off lines of 10 units or more', () => {
+    expect(lineTotal({ sku: 'a', unitPrice: 2, quantity: 10 })).toBe(18);
+    expect(lineTotal({ sku: 'a', unitPrice: 2, quantity: 9 })).toBe(18);
+  });
+
   it('rejects negative quantities', () => {
     expect(() => lineTotal({ sku: 'a', unitPrice: 1, quantity: -1 })).toThrow(RangeError);
   });
