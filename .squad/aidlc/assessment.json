@@ -95,7 +95,7 @@
       "id": "gherkin",
       "level": 4,
       "label": "Executable specs (Gherkin bound to OpenSpec)",
-      "pass": false
+      "pass": true
     },
     {
       "id": "sbom",
